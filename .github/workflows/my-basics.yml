@@ -47,8 +47,8 @@ jobs:
       run: 
         echo "Deploy package name is ${{env.PACKAGE_NAME}}"
 
-    #- name: Let's test some packages if they are here 1
-    #  run: aws --version
+    - name: Let's test some packages if they are here 1
+      run: aws --version
 
     - name: Let's test some packages if they are here 2
       run: zip
