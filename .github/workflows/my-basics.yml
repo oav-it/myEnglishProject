@@ -48,11 +48,11 @@ jobs:
 
     - name: Print env vars
       run: 
-         echo "Var1 = ${{env.Var1}}"
-         echo "Var2 = ${{env.Var2}}"
-      #   echo "Var3 = $LOCAL_VAR
-     # env: 
-      #  LOCAL_VAR : "This is Supper local Enviroment variable"
+         echo "Var1 = ${{env.VAR1}}"
+         echo "Var2 = ${{env.VAR2}}"
+         echo "Var3 = $LOCAL_VAR
+      env: 
+        LOCAL_VAR : "This is Supper local Environment variable"
 
     - name: Printing Deployment package
       run: 
