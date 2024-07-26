@@ -4,6 +4,10 @@
 # Copyleft (c) by Andrey Ososkov 2024.
 #---------------------------------------------------
 name: My-GitHubActions-Basics
+env:
+  APPLICATION_NAME   : "MyFlask"
+  PACKAGE_NAME       : "flask-deploy-ver-{{github.sha}}"
+
 on: 
   push:
     branches: 
@@ -15,6 +19,12 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Testing job"
+
+    - name: Execute few commands
+      run: 
+        echo "Hello Message1"   
+        echo "Hello Message2" 
+        echo "Application name:${{env.APPLICATION_NAME}}"
   
   my_deploy:
     runs-on: ubuntu-latest 
@@ -23,3 +33,7 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Deploy job"
+
+    - name: Printing Deployment package
+      run: 
+        echo "Deploy package name is ${{env.PACKAGE_NAME}}"
