@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Testing job"
-
+      
     - name: Execute few commands
       run: 
         echo "Hello Message1"   
@@ -29,7 +29,6 @@ jobs:
     - name: List current folder
       run: ls -la
 
-  
   my_deploy:
     runs-on: ubuntu-latest 
     needs: [my_testing]
